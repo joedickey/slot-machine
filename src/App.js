@@ -2,6 +2,8 @@ import { useState } from 'react';
 import './App.css';
 import ReelDisplay from './ReelDisplay'
 import BetButtons from './BetButtons'
+import Attribution from './Attribution'
+import GifDisplay from './GifDisplay'
 
 function App() {
   // STATE VARIABLES //
@@ -9,6 +11,7 @@ function App() {
   const [reel, setReel] = useState(['white', 'white', 'white', 'white', 'white'])
   const [bet, setBet] = useState(0)
   const [result, setResult] = useState('')
+  const [displayGif, setDisplayGif] = useState('')
 
   // OTHER VARIABLES //
   const colors = ['red', 'green', 'blue', 'yellow']
@@ -19,9 +22,11 @@ function App() {
     setReel(['white', 'white', 'white', 'white', 'white']);
     setBet(0)
     setResult('')
+    setDisplayGif('')
   }
 
   const handleSubmit = (e) => {
+    setDisplayGif('')
     setResult('')
     let newTotal = total - bet
     setTotal(total - bet)
@@ -57,8 +62,10 @@ function App() {
       const reward = (bet * winningStreak)
       setResult(`Winner! Streak of ${winningStreak} on ${streakColor} for $${reward}.`)
       setTotal(roundTotal + reward)
+      setDisplayGif('win')
     } else if(roundTotal === 0){
       setResult(`Sorry! You lost all your money.`)
+      setDisplayGif('lose')
     } else {
       setResult(`Sorry! You lost your bet of $${bet}.`)
     }
@@ -68,14 +75,15 @@ function App() {
     <div className='App'>
       <h1>Test Your Luck</h1>
       <h3>Total: ${total}</h3>
-      <p className='Results'>{result}</p>
+      <GifDisplay displayGif={displayGif} />
+      <p className={`Results ${result.length > 0 ? '' : 'hidden'}`}>{result ? result : '.'}</p> {/* to keep margins same when hidden */}
       <div className='Reel'>
         <ReelDisplay reel={reel}/>
       </div>
       <form className='Controls' onSubmit={handleSubmit}>
         <div className='Bet'>
           <label htmlFor='bet'>Bet: $</label>
-          <input type='number' id='bet' name='bet' min='0' max={total} value={bet} onChange={e => setBet(parseInt(e.target.value))}/>
+          {bet}
         </div>
         <BetButtons updateBet={setBet} bet={bet} total={total}/>
         {total === 0  
@@ -84,6 +92,7 @@ function App() {
         }
       </form>
       <p className='Error'></p>
+      <Attribution />
     </div>
   );
 }

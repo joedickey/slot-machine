@@ -1,21 +1,29 @@
+html {
+  background-color: rgb(240, 236, 212);
+}
+
 .App {
   display: flex;
   flex-direction: column;
   align-items: center;
+  text-shadow: 1px 1px 3px rgb(199, 199, 199, 0.2);
 }
 
 .Reel {
   display: flex;
   flex-direction: row;
+  
 }
 
 .Reel_display {
-  border: 1px solid black; 
   height: 15vw; 
   width: 15vw;
   margin: 2vw;
   max-width: 100px;
   max-height: 100px;
+  border: none;
+  border-radius: 10%;
+  box-shadow: 1px 1px 3px rgb(199, 199, 199);
 }
 
 .Controls {
@@ -25,8 +33,14 @@
   margin-top: 30px;
 }
 
+.Attribution {
+  margin-top: calc(50vh);
+  margin-bottom: 10px;
+  font-size: small;
+}
+
 h3 {
-  margin: 0px 0px 30px 0px;
+  margin: 0px 0px 10px 0px;
 } 
 
 input {
@@ -35,19 +49,40 @@ input {
 }
 
 .Bet {
-  margin-bottom: 10px;
+  margin-bottom: 20px;
 }
 
 .BetButtons {
-  margin-bottom: 10px;
+  margin-bottom: 20px;
 }
 
 .BetButtons_val {
   margin: 0px 5px;
 }
 
+.GifDisplay {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.hidden {
+  opacity: 0;
+}
+
 button {
   width: 50px;
+  background-color: white;
+  border: none;
+  border-radius: 10%;
+  box-shadow: 1px 1px 3px rgb(199, 199, 199);
+  padding: 5px;
+}
+
+input {
+  border: none;
+  border-radius: 10%;
+  box-shadow: 1px 1px 3px rgb(199, 199, 199);
 }
 
 @media only screen and (min-width: 800px) {
