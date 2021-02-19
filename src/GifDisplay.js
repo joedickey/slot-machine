@@ -8,8 +8,8 @@ function GifDisplay ({displayGif}) {
         <div className='GifDisplay'>
             {displayGif.length > 0
                 ? (displayGif === 'win' 
-                    ? <div className='GifDisplay_gif'><img src={winGif} width='300px' height='200px' alt='giphy'/><img src='https://www.gstatic.com/tenor/web/attribution/PB_tenor_logo_blue_horizontal.png' width='60px' alt='Tenor'/></div>
-                    : <div className='GifDisplay_gif'><img src={loseGif} width='300px' height='200px' alt='giphy'/><img src='https://www.gstatic.com/tenor/web/attribution/PB_tenor_logo_blue_horizontal.png' width='60px' alt='Tenor'/></div>)
+                    ? <div className='GifDisplay_gif'><img src={winGif} width={300} height={200} alt='giphy'/><img src='https://www.gstatic.com/tenor/web/attribution/PB_tenor_logo_blue_horizontal.png' width={60} alt='Tenor'/></div>
+                    : <div className='GifDisplay_gif'><img src={loseGif} width={300} height={200} alt='giphy'/><img src='https://www.gstatic.com/tenor/web/attribution/PB_tenor_logo_blue_horizontal.png' width={60} alt='Tenor'/></div>)
                 : ''
             }
         </div>

@@ -82,8 +82,7 @@ function App() {
       </div>
       <form className='Controls' onSubmit={handleSubmit}>
         <div className='Bet'>
-          <label htmlFor='bet'>Bet: $</label>
-          {bet}
+          <p>Bet: ${bet}</p>
         </div>
         <BetButtons updateBet={setBet} bet={bet} total={total}/>
         {total === 0  
