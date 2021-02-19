@@ -7,7 +7,9 @@ function GifDisplay ({displayGif}) {
     return (
         <div className='GifDisplay'>
             {displayGif.length > 0
-                ? (displayGif === 'win' ? <img src={winGif} width='300px' height='200px' alt='giphy'/> : <img src={loseGif} width='300px' height='200px' alt='giphy'/>)
+                ? (displayGif === 'win' 
+                    ? <div className='GifDisplay_gif'><img src={winGif} width='300px' height='200px' alt='giphy'/><img src='https://www.gstatic.com/tenor/web/attribution/PB_tenor_logo_blue_horizontal.png' width='60px' alt='Tenor'/></div>
+                    : <div className='GifDisplay_gif'><img src={loseGif} width='300px' height='200px' alt='giphy'/><img src='https://www.gstatic.com/tenor/web/attribution/PB_tenor_logo_blue_horizontal.png' width='60px' alt='Tenor'/></div>)
                 : ''
             }
         </div>

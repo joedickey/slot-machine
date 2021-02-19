@@ -66,6 +66,11 @@ input {
   align-items: center;
 }
 
+.GifDisplay_gif {
+  display: flex;
+  flex-direction: column;
+}
+
 .hidden {
   opacity: 0;
 }
